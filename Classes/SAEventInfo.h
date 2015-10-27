@@ -10,17 +10,17 @@
 
 @interface SAEventInfo : NSObject
 
-@property(nonatomic,retain)NSString *operateType;
-@property(nonatomic,retain)NSString *objId;
-@property(nonatomic,retain)NSString *stayTime;
-@property(nonatomic,retain)NSString *userName;
-@property(nonatomic,retain)NSString *operateDate;
-@property(nonatomic,retain)NSString *appVersion;
-@property(nonatomic,retain)NSString *productLine;
-@property(nonatomic,retain)NSString *deviceID;
-@property(nonatomic,retain)NSString *deviceModel;
-@property(nonatomic,retain)NSString *deviceBrand;
-@property(nonatomic,retain)NSString *deviceOSVersion;
+@property(nonatomic,strong)NSString *operateType;
+@property(nonatomic,strong)NSString *objId;
+@property(nonatomic,strong)NSString *stayTime;
+@property(nonatomic,strong)NSString *userName;
+@property(nonatomic,strong)NSString *operateDate;
+@property(nonatomic,strong)NSString *appVersion;
+@property(nonatomic,strong)NSString *productLine;
+@property(nonatomic,strong)NSString *deviceID;
+@property(nonatomic,strong)NSString *deviceModel;
+@property(nonatomic,strong)NSString *deviceBrand;
+@property(nonatomic,strong)NSString *deviceOSVersion;
 - (NSDictionary *) entityToDictionary:(id)entity;
 
 @end

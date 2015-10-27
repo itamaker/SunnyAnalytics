@@ -9,40 +9,63 @@
 #import "SAEventInfo.h"
 #import <objc/runtime.h>
 @implementation SAEventInfo
-- (NSDictionary *) entityToDictionary:(id)entity
+
+
+-(NSDictionary*)entityToDictionary:(id)obj
 {
-    
-    Class clazz = [entity class];
-    u_int count;
-    
-    objc_property_t* properties = class_copyPropertyList(clazz, &count);
-    NSMutableArray* propertyArray = [NSMutableArray arrayWithCapacity:count];
-    NSMutableArray* valueArray = [NSMutableArray arrayWithCapacity:count];
-    
-    for (int i = 0; i < count ; i++)
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    unsigned int propsCount;
+    objc_property_t *props = class_copyPropertyList([obj class], &propsCount);
+    for(int i = 0;i < propsCount; i++)
     {
-        objc_property_t prop=properties[i];
-        const char* propertyName = property_getName(prop);
+        objc_property_t prop = props[i];
         
-        [propertyArray addObject:[NSString stringWithCString:propertyName encoding:NSUTF8StringEncoding]];
-        
-        //        const char* attributeName = property_getAttributes(prop);
-        //        NSLog(@"%@",[NSString stringWithUTF8String:propertyName]);
-        //        NSLog(@"%@",[NSString stringWithUTF8String:attributeName]);
-        
-        id value =  [entity performSelector:NSSelectorFromString([NSString stringWithUTF8String:propertyName])];
-        if(value ==nil)
-            [valueArray addObject:[NSNull null]];
-        else {
-            [valueArray addObject:value];
+        NSString *propName = [NSString stringWithUTF8String:property_getName(prop)];
+        id value = [obj valueForKey:propName];
+        if(value == nil)
+        {
+            value = [NSNull null];
         }
-        //        NSLog(@"%@",value);
+        else
+        {
+            value = [self getObjectInternal:value];
+        }
+        [dic setObject:value forKey:propName];
+    }
+    return dic;
+}
+
+- (id)getObjectInternal:(id)obj
+{
+    if([obj isKindOfClass:[NSString class]]
+       || [obj isKindOfClass:[NSNumber class]]
+       || [obj isKindOfClass:[NSNull class]])
+    {
+        return obj;
     }
     
-    free(properties);
+    if([obj isKindOfClass:[NSArray class]])
+    {
+        NSArray *objarr = obj;
+        NSMutableArray *arr = [NSMutableArray arrayWithCapacity:objarr.count];
+        for(int i = 0;i < objarr.count; i++)
+        {
+            [arr setObject:[self getObjectInternal:[objarr objectAtIndex:i]] atIndexedSubscript:i];
+        }
+        return arr;
+    }
     
-    NSDictionary* returnDic = [NSDictionary dictionaryWithObjects:valueArray forKeys:propertyArray];
-    NSLog(@"%@", returnDic);
-    
-    return returnDic;
-}  @end
+    if([obj isKindOfClass:[NSDictionary class]])
+    {
+        NSDictionary *objdic = obj;
+        NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:[objdic count]];
+        for(NSString *key in objdic.allKeys)
+        {
+            [dic setObject:[self getObjectInternal:[objdic objectForKey:key]] forKey:key];
+        }
+        return dic;
+    }
+    return [self entityToDictionary:obj];
+}
+
+@end
