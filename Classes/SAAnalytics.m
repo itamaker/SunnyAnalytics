@@ -7,7 +7,6 @@
 //
 #import "SAAnalytics.h"
 #import "SAEventInfo.h"
-#import "SAUDIDUtil.h"
 #import <net/if.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
@@ -16,8 +15,6 @@
 #import "SAGzipUtility.h"
 #import "SAHeader.h"
 #import "JSONKit.h"
-#import "SAUDIDUtil.h"
-#include "SAKeychainWrapperUtil.h"
 
 #define BEHAVIOR_PATH @"behaviorInfo.txt"
 #define VIEWINFO_PATH @"eventInfo.gz"
@@ -224,11 +221,11 @@
                 userViewInfo.productLine = [NSString stringWithFormat:@"%d",(int)[[NSUserDefaults standardUserDefaults] integerForKey:SAProductLine]];
             
             NSDictionary *dic = [[NSBundle mainBundle] infoDictionary];
-            userViewInfo.deviceID = [SAUDIDUtil UDID];
+//            userViewInfo.deviceID = [SAUDIDUtil UDID];
             userViewInfo.appVersion = [NSString stringWithFormat:@"V%@",[dic objectForKey:@"CFBundleVersion"]];
-            userViewInfo.deviceBrand = [UIDevice currentDevice].model;
+//            userViewInfo.deviceBrand = [UIDevice currentDevice].model;
             userViewInfo.deviceModel = [self deviceString];
-            userViewInfo.deviceOSVersion = [UIDevice currentDevice].systemVersion;
+//            userViewInfo.deviceOSVersion = [UIDevice currentDevice].systemVersion;
             NSData *data = [SAFileManeger readFile:VIEWINFO_PATH];
                 data = [SAGzipUtility decompressData:data];
                 

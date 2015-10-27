@@ -17,13 +17,10 @@
 		0E2C40611B625FB800384359 /* SunnyAnalyticsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C40601B625FB800384359 /* SunnyAnalyticsUITests.m */; };
 		0E2C408F1B62631B00384359 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2C408E1B62631B00384359 /* libz.tbd */; };
 		0E3AB60C1BDF6D1500B751A0 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB5FC1BDF6D1500B751A0 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0E3AB60D1BDF6D1500B751A0 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB5FE1BDF6D1500B751A0 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0E3AB60E1BDF6D1500B751A0 /* SAAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6001BDF6D1500B751A0 /* SAAnalytics.m */; };
 		0E3AB60F1BDF6D1500B751A0 /* SAEventInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6021BDF6D1500B751A0 /* SAEventInfo.m */; };
 		0E3AB6101BDF6D1500B751A0 /* SAFileManeger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6041BDF6D1500B751A0 /* SAFileManeger.m */; };
 		0E3AB6111BDF6D1500B751A0 /* SAGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6061BDF6D1500B751A0 /* SAGzipUtility.m */; };
-		0E3AB6121BDF6D1500B751A0 /* SAKeychainWrapperUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6091BDF6D1500B751A0 /* SAKeychainWrapperUtil.m */; };
-		0E3AB6131BDF6D1500B751A0 /* SAUDIDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB60B1BDF6D1500B751A0 /* SAUDIDUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +60,6 @@
 		0E2C408E1B62631B00384359 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0E3AB5FB1BDF6D1500B751A0 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		0E3AB5FC1BDF6D1500B751A0 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		0E3AB5FD1BDF6D1500B751A0 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		0E3AB5FE1BDF6D1500B751A0 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		0E3AB5FF1BDF6D1500B751A0 /* SAAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAnalytics.h; sourceTree = "<group>"; };
 		0E3AB6001BDF6D1500B751A0 /* SAAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAnalytics.m; sourceTree = "<group>"; };
 		0E3AB6011BDF6D1500B751A0 /* SAEventInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAEventInfo.h; sourceTree = "<group>"; };
@@ -74,10 +69,6 @@
 		0E3AB6051BDF6D1500B751A0 /* SAGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAGzipUtility.h; sourceTree = "<group>"; };
 		0E3AB6061BDF6D1500B751A0 /* SAGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAGzipUtility.m; sourceTree = "<group>"; };
 		0E3AB6071BDF6D1500B751A0 /* SAHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAHeader.h; sourceTree = "<group>"; };
-		0E3AB6081BDF6D1500B751A0 /* SAKeychainWrapperUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAKeychainWrapperUtil.h; sourceTree = "<group>"; };
-		0E3AB6091BDF6D1500B751A0 /* SAKeychainWrapperUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAKeychainWrapperUtil.m; sourceTree = "<group>"; };
-		0E3AB60A1BDF6D1500B751A0 /* SAUDIDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAUDIDUtil.h; sourceTree = "<group>"; };
-		0E3AB60B1BDF6D1500B751A0 /* SAUDIDUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAUDIDUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,8 +166,6 @@
 			children = (
 				0E3AB5FB1BDF6D1500B751A0 /* JSONKit.h */,
 				0E3AB5FC1BDF6D1500B751A0 /* JSONKit.m */,
-				0E3AB5FD1BDF6D1500B751A0 /* KeychainItemWrapper.h */,
-				0E3AB5FE1BDF6D1500B751A0 /* KeychainItemWrapper.m */,
 				0E3AB5FF1BDF6D1500B751A0 /* SAAnalytics.h */,
 				0E3AB6001BDF6D1500B751A0 /* SAAnalytics.m */,
 				0E3AB6011BDF6D1500B751A0 /* SAEventInfo.h */,
@@ -186,10 +175,6 @@
 				0E3AB6051BDF6D1500B751A0 /* SAGzipUtility.h */,
 				0E3AB6061BDF6D1500B751A0 /* SAGzipUtility.m */,
 				0E3AB6071BDF6D1500B751A0 /* SAHeader.h */,
-				0E3AB6081BDF6D1500B751A0 /* SAKeychainWrapperUtil.h */,
-				0E3AB6091BDF6D1500B751A0 /* SAKeychainWrapperUtil.m */,
-				0E3AB60A1BDF6D1500B751A0 /* SAUDIDUtil.h */,
-				0E3AB60B1BDF6D1500B751A0 /* SAUDIDUtil.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -325,16 +310,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E2C40431B625FB800384359 /* ViewController.m in Sources */,
-				0E3AB6131BDF6D1500B751A0 /* SAUDIDUtil.m in Sources */,
 				0E2C40401B625FB800384359 /* AppDelegate.m in Sources */,
 				0E3AB60E1BDF6D1500B751A0 /* SAAnalytics.m in Sources */,
 				0E3AB60C1BDF6D1500B751A0 /* JSONKit.m in Sources */,
-				0E3AB60D1BDF6D1500B751A0 /* KeychainItemWrapper.m in Sources */,
 				0E3AB6101BDF6D1500B751A0 /* SAFileManeger.m in Sources */,
 				0E2C403D1B625FB800384359 /* main.m in Sources */,
 				0E3AB6111BDF6D1500B751A0 /* SAGzipUtility.m in Sources */,
 				0E3AB60F1BDF6D1500B751A0 /* SAEventInfo.m in Sources */,
-				0E3AB6121BDF6D1500B751A0 /* SAKeychainWrapperUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
