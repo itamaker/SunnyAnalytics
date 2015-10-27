@@ -391,7 +391,7 @@
 {
     NSCalendar *cal = [NSCalendar currentCalendar];
     
-    unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     
     NSDateComponents *d = [cal components:unitFlags fromDate:date1 toDate:date2 options:0];
     

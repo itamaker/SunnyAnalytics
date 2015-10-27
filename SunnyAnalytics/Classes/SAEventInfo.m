@@ -29,8 +29,10 @@
         //        const char* attributeName = property_getAttributes(prop);
         //        NSLog(@"%@",[NSString stringWithUTF8String:propertyName]);
         //        NSLog(@"%@",[NSString stringWithUTF8String:attributeName]);
-        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         id value =  [entity performSelector:NSSelectorFromString([NSString stringWithUTF8String:propertyName])];
+#pragma clang diagnostic pop
         if(value ==nil)
             [valueArray addObject:[NSNull null]];
         else {
