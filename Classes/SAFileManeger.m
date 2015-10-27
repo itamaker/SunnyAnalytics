@@ -8,7 +8,6 @@
 
 #import "SAFileManeger.h"
 #import "SAGzipUtility.h"
-#import "JSONKit.h"
 @implementation SAFileManeger
 //读取toPath路径下的NSArray类型的内容
 + (NSData*)readFile:(NSString *)toPath {
@@ -49,8 +48,7 @@
     
     //    [fileManager changeCurrentDirectoryPath:[documentsDirectory stringByExpandingTildeInPath]];
     //    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"userInfo.plist"];
-    NSData *data = [arr JSONData
-                    ];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:arr];
     data = [SAGzipUtility compressData:data];
     
     return [data writeToFile:path atomically:NO];

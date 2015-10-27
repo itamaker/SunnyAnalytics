@@ -14,7 +14,7 @@
 #import "SAFileManeger.h"
 #import "SAGzipUtility.h"
 #import "SAHeader.h"
-#import "JSONKit.h"
+//#import "JSONKit.h"
 
 #define BEHAVIOR_PATH @"behaviorInfo.txt"
 #define VIEWINFO_PATH @"eventInfo.gz"
@@ -101,8 +101,11 @@
     //    [request addValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response,NSData *data,NSError *error){
-        NSDictionary *result = [data objectFromJSONData];
+        
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        NSDictionary *result = [unarchiver decodeObjectForKey:@"ret"];
         NSNumber *ret = [result objectForKey:@"ret"];
+
         if (ret.integerValue==0&&data) {
             NSLog(@"发送成功%@",result);
             [SAFileManeger deleteFile:VIEWINFO_PATH];
@@ -229,7 +232,9 @@
             NSData *data = [SAFileManeger readFile:VIEWINFO_PATH];
                 data = [SAGzipUtility decompressData:data];
                 
-            NSMutableArray *arr = [NSMutableArray arrayWithArray:[data objectFromJSONData]];
+                NSMutableArray* arr = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+
+//            NSMutableArray *arr = [NSMutableArray arrayWithArray:[data objectFromJSONData]];
             if (!arr) {
                 arr = [[NSMutableArray alloc] init];
             }
