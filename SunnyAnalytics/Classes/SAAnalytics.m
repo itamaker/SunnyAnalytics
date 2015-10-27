@@ -14,7 +14,7 @@
 #import "SAFileManeger.h"
 #import "SAGzipUtility.h"
 #import "SAHeader.h"
-//#import "JSONKit.h"
+#import "JSONKit.h"
 
 #define BEHAVIOR_PATH @"behaviorInfo.txt"
 #define VIEWINFO_PATH @"eventInfo.gz"
