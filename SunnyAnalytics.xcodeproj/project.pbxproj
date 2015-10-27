@@ -15,15 +15,15 @@
 		0E2C404B1B625FB800384359 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2C40491B625FB800384359 /* LaunchScreen.storyboard */; };
 		0E2C40561B625FB800384359 /* SunnyAnalyticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C40551B625FB800384359 /* SunnyAnalyticsTests.m */; };
 		0E2C40611B625FB800384359 /* SunnyAnalyticsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C40601B625FB800384359 /* SunnyAnalyticsUITests.m */; };
-		0E2C40771B62603000384359 /* SAAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C40701B62603000384359 /* SAAnalytics.m */; };
-		0E2C40781B62603000384359 /* SAEventInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C40721B62603000384359 /* SAEventInfo.m */; };
-		0E2C40791B62603000384359 /* SAFileManeger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C40741B62603000384359 /* SAFileManeger.m */; };
-		0E2C407A1B62603000384359 /* SAGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C40761B62603000384359 /* SAGzipUtility.m */; };
-		0E2C407F1B6260AB00384359 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C407E1B6260AB00384359 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0E2C408A1B62615A00384359 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C40851B62615A00384359 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0E2C408B1B62615A00384359 /* SAKeychainWrapperUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C40871B62615A00384359 /* SAKeychainWrapperUtil.m */; };
-		0E2C408C1B62615A00384359 /* SAUDIDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C40891B62615A00384359 /* SAUDIDUtil.m */; };
 		0E2C408F1B62631B00384359 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2C408E1B62631B00384359 /* libz.tbd */; };
+		0E3AB60C1BDF6D1500B751A0 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB5FC1BDF6D1500B751A0 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0E3AB60D1BDF6D1500B751A0 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB5FE1BDF6D1500B751A0 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0E3AB60E1BDF6D1500B751A0 /* SAAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6001BDF6D1500B751A0 /* SAAnalytics.m */; };
+		0E3AB60F1BDF6D1500B751A0 /* SAEventInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6021BDF6D1500B751A0 /* SAEventInfo.m */; };
+		0E3AB6101BDF6D1500B751A0 /* SAFileManeger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6041BDF6D1500B751A0 /* SAFileManeger.m */; };
+		0E3AB6111BDF6D1500B751A0 /* SAGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6061BDF6D1500B751A0 /* SAGzipUtility.m */; };
+		0E3AB6121BDF6D1500B751A0 /* SAKeychainWrapperUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6091BDF6D1500B751A0 /* SAKeychainWrapperUtil.m */; };
+		0E3AB6131BDF6D1500B751A0 /* SAUDIDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB60B1BDF6D1500B751A0 /* SAUDIDUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,24 +60,24 @@
 		0E2C405C1B625FB800384359 /* SunnyAnalyticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunnyAnalyticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2C40601B625FB800384359 /* SunnyAnalyticsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SunnyAnalyticsUITests.m; sourceTree = "<group>"; };
 		0E2C40621B625FB800384359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E2C406F1B62603000384359 /* SAAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAnalytics.h; sourceTree = "<group>"; };
-		0E2C40701B62603000384359 /* SAAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAnalytics.m; sourceTree = "<group>"; };
-		0E2C40711B62603000384359 /* SAEventInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAEventInfo.h; sourceTree = "<group>"; };
-		0E2C40721B62603000384359 /* SAEventInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAEventInfo.m; sourceTree = "<group>"; };
-		0E2C40731B62603000384359 /* SAFileManeger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFileManeger.h; sourceTree = "<group>"; };
-		0E2C40741B62603000384359 /* SAFileManeger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFileManeger.m; sourceTree = "<group>"; };
-		0E2C40751B62603000384359 /* SAGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAGzipUtility.h; sourceTree = "<group>"; };
-		0E2C40761B62603000384359 /* SAGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAGzipUtility.m; sourceTree = "<group>"; };
-		0E2C407D1B6260AB00384359 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		0E2C407E1B6260AB00384359 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		0E2C40841B62615A00384359 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		0E2C40851B62615A00384359 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
-		0E2C40861B62615A00384359 /* SAKeychainWrapperUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAKeychainWrapperUtil.h; sourceTree = "<group>"; };
-		0E2C40871B62615A00384359 /* SAKeychainWrapperUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAKeychainWrapperUtil.m; sourceTree = "<group>"; };
-		0E2C40881B62615A00384359 /* SAUDIDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAUDIDUtil.h; sourceTree = "<group>"; };
-		0E2C40891B62615A00384359 /* SAUDIDUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAUDIDUtil.m; sourceTree = "<group>"; };
-		0E2C408D1B62619800384359 /* SAHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAHeader.h; sourceTree = "<group>"; };
 		0E2C408E1B62631B00384359 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0E3AB5FB1BDF6D1500B751A0 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		0E3AB5FC1BDF6D1500B751A0 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		0E3AB5FD1BDF6D1500B751A0 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		0E3AB5FE1BDF6D1500B751A0 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		0E3AB5FF1BDF6D1500B751A0 /* SAAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAnalytics.h; sourceTree = "<group>"; };
+		0E3AB6001BDF6D1500B751A0 /* SAAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAnalytics.m; sourceTree = "<group>"; };
+		0E3AB6011BDF6D1500B751A0 /* SAEventInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAEventInfo.h; sourceTree = "<group>"; };
+		0E3AB6021BDF6D1500B751A0 /* SAEventInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAEventInfo.m; sourceTree = "<group>"; };
+		0E3AB6031BDF6D1500B751A0 /* SAFileManeger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAFileManeger.h; sourceTree = "<group>"; };
+		0E3AB6041BDF6D1500B751A0 /* SAFileManeger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFileManeger.m; sourceTree = "<group>"; };
+		0E3AB6051BDF6D1500B751A0 /* SAGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAGzipUtility.h; sourceTree = "<group>"; };
+		0E3AB6061BDF6D1500B751A0 /* SAGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAGzipUtility.m; sourceTree = "<group>"; };
+		0E3AB6071BDF6D1500B751A0 /* SAHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAHeader.h; sourceTree = "<group>"; };
+		0E3AB6081BDF6D1500B751A0 /* SAKeychainWrapperUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAKeychainWrapperUtil.h; sourceTree = "<group>"; };
+		0E3AB6091BDF6D1500B751A0 /* SAKeychainWrapperUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAKeychainWrapperUtil.m; sourceTree = "<group>"; };
+		0E3AB60A1BDF6D1500B751A0 /* SAUDIDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAUDIDUtil.h; sourceTree = "<group>"; };
+		0E3AB60B1BDF6D1500B751A0 /* SAUDIDUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAUDIDUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +130,7 @@
 		0E2C403A1B625FB800384359 /* SunnyAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				0E2C40821B62614000384359 /* Utils */,
-				0E2C407B1B62606300384359 /* Vendors */,
-				0E2C406E1B62600B00384359 /* Analytics */,
+				0E3AB5FA1BDF6D1500B751A0 /* Classes */,
 				0E2C403E1B625FB800384359 /* AppDelegate.h */,
 				0E2C403F1B625FB800384359 /* AppDelegate.m */,
 				0E2C40411B625FB800384359 /* ViewController.h */,
@@ -172,58 +170,28 @@
 			path = SunnyAnalyticsUITests;
 			sourceTree = "<group>";
 		};
-		0E2C406E1B62600B00384359 /* Analytics */ = {
+		0E3AB5FA1BDF6D1500B751A0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0E2C408D1B62619800384359 /* SAHeader.h */,
-				0E2C406F1B62603000384359 /* SAAnalytics.h */,
-				0E2C40701B62603000384359 /* SAAnalytics.m */,
-				0E2C40711B62603000384359 /* SAEventInfo.h */,
-				0E2C40721B62603000384359 /* SAEventInfo.m */,
-				0E2C40731B62603000384359 /* SAFileManeger.h */,
-				0E2C40741B62603000384359 /* SAFileManeger.m */,
-				0E2C40751B62603000384359 /* SAGzipUtility.h */,
-				0E2C40761B62603000384359 /* SAGzipUtility.m */,
+				0E3AB5FB1BDF6D1500B751A0 /* JSONKit.h */,
+				0E3AB5FC1BDF6D1500B751A0 /* JSONKit.m */,
+				0E3AB5FD1BDF6D1500B751A0 /* KeychainItemWrapper.h */,
+				0E3AB5FE1BDF6D1500B751A0 /* KeychainItemWrapper.m */,
+				0E3AB5FF1BDF6D1500B751A0 /* SAAnalytics.h */,
+				0E3AB6001BDF6D1500B751A0 /* SAAnalytics.m */,
+				0E3AB6011BDF6D1500B751A0 /* SAEventInfo.h */,
+				0E3AB6021BDF6D1500B751A0 /* SAEventInfo.m */,
+				0E3AB6031BDF6D1500B751A0 /* SAFileManeger.h */,
+				0E3AB6041BDF6D1500B751A0 /* SAFileManeger.m */,
+				0E3AB6051BDF6D1500B751A0 /* SAGzipUtility.h */,
+				0E3AB6061BDF6D1500B751A0 /* SAGzipUtility.m */,
+				0E3AB6071BDF6D1500B751A0 /* SAHeader.h */,
+				0E3AB6081BDF6D1500B751A0 /* SAKeychainWrapperUtil.h */,
+				0E3AB6091BDF6D1500B751A0 /* SAKeychainWrapperUtil.m */,
+				0E3AB60A1BDF6D1500B751A0 /* SAUDIDUtil.h */,
+				0E3AB60B1BDF6D1500B751A0 /* SAUDIDUtil.m */,
 			);
-			name = Analytics;
-			sourceTree = "<group>";
-		};
-		0E2C407B1B62606300384359 /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-				0E2C407C1B6260A000384359 /* JSONKit */,
-			);
-			name = Vendors;
-			sourceTree = "<group>";
-		};
-		0E2C407C1B6260A000384359 /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				0E2C407D1B6260AB00384359 /* JSONKit.h */,
-				0E2C407E1B6260AB00384359 /* JSONKit.m */,
-			);
-			name = JSONKit;
-			sourceTree = "<group>";
-		};
-		0E2C40821B62614000384359 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				0E2C40831B62614A00384359 /* UUID */,
-			);
-			name = Utils;
-			sourceTree = "<group>";
-		};
-		0E2C40831B62614A00384359 /* UUID */ = {
-			isa = PBXGroup;
-			children = (
-				0E2C40841B62615A00384359 /* KeychainItemWrapper.h */,
-				0E2C40851B62615A00384359 /* KeychainItemWrapper.m */,
-				0E2C40861B62615A00384359 /* SAKeychainWrapperUtil.h */,
-				0E2C40871B62615A00384359 /* SAKeychainWrapperUtil.m */,
-				0E2C40881B62615A00384359 /* SAUDIDUtil.h */,
-				0E2C40891B62615A00384359 /* SAUDIDUtil.m */,
-			);
-			name = UUID;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,17 +324,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E2C408B1B62615A00384359 /* SAKeychainWrapperUtil.m in Sources */,
-				0E2C407A1B62603000384359 /* SAGzipUtility.m in Sources */,
-				0E2C40781B62603000384359 /* SAEventInfo.m in Sources */,
 				0E2C40431B625FB800384359 /* ViewController.m in Sources */,
-				0E2C40791B62603000384359 /* SAFileManeger.m in Sources */,
-				0E2C40771B62603000384359 /* SAAnalytics.m in Sources */,
+				0E3AB6131BDF6D1500B751A0 /* SAUDIDUtil.m in Sources */,
 				0E2C40401B625FB800384359 /* AppDelegate.m in Sources */,
-				0E2C407F1B6260AB00384359 /* JSONKit.m in Sources */,
+				0E3AB60E1BDF6D1500B751A0 /* SAAnalytics.m in Sources */,
+				0E3AB60C1BDF6D1500B751A0 /* JSONKit.m in Sources */,
+				0E3AB60D1BDF6D1500B751A0 /* KeychainItemWrapper.m in Sources */,
+				0E3AB6101BDF6D1500B751A0 /* SAFileManeger.m in Sources */,
 				0E2C403D1B625FB800384359 /* main.m in Sources */,
-				0E2C408C1B62615A00384359 /* SAUDIDUtil.m in Sources */,
-				0E2C408A1B62615A00384359 /* KeychainItemWrapper.m in Sources */,
+				0E3AB6111BDF6D1500B751A0 /* SAGzipUtility.m in Sources */,
+				0E3AB60F1BDF6D1500B751A0 /* SAEventInfo.m in Sources */,
+				0E3AB6121BDF6D1500B751A0 /* SAKeychainWrapperUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
