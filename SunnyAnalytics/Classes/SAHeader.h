@@ -10,10 +10,10 @@
 #define SAHeader_h
 
 #pragma mark - BASE URL
-#define SABASE_URL @"贾朝阳"
+#define SABASE_URL @"http://***.com/"
 
 #pragma mark -上传埋点
-#define SAUPLOADLOG_URL SABASE_URL@"欢迎光临我的BLOG：www.gitpark.com"
+#define SAUPLOADLOG_URL SABASE_URL@"/app/upload"
 
 
 #define SAUUIDKey @"UUID"
