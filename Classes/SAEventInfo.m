@@ -10,7 +10,6 @@
 #import <objc/runtime.h>
 @implementation SAEventInfo
 
-
 -(NSDictionary*)entityToDictionary:(id)obj
 {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
