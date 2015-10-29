@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface SAFileManeger : NSObject
+
 + (NSData*)readFile:(NSString *)toPath;
 + (BOOL)writeToFile:(NSArray*)arr toPath:(NSString*)toPath;
 + (BOOL)deleteFile:(NSString*)path;

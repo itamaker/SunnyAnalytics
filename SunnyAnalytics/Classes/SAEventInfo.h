@@ -21,6 +21,7 @@
 @property(nonatomic,strong)NSString *deviceModel;
 @property(nonatomic,strong)NSString *deviceBrand;
 @property(nonatomic,strong)NSString *deviceOSVersion;
+
 - (NSDictionary *) entityToDictionary:(id)entity;
 
 @end

@@ -34,13 +34,9 @@
         
         strm.next_out = [compressed mutableBytes] + strm.total_out;
         strm.avail_out = (unsigned int)([compressed length] - strm.total_out);
-        
         deflate(&strm, Z_FINISH);
-        
     } while (strm.avail_out == 0);
-    
     deflateEnd(&strm);
-    
     [compressed setLength: strm.total_out];
     return [NSData dataWithData:compressed];
 }
@@ -49,100 +45,43 @@
     z_stream zStream;
     
     zStream. zalloc = Z_NULL ;
-    
     zStream. zfree = Z_NULL ;
-    
     zStream. opaque = Z_NULL ;
-    
     zStream. avail_in = 0 ;
-    
     zStream. next_in = 0 ;
     
     int status = inflateInit2 (&zStream, ( 15 + 32 ));
-    
-    
-    
     if (status != Z_OK ) {
-        
         return nil ;
-        
     }
-    
-    
     
     Bytef *bytes = ( Bytef *)[compressedData bytes ];
-    
     NSUInteger length = [compressedData length ];
-    
-    
-    
     NSUInteger halfLength = length/ 2 ;
-    
     NSMutableData *uncompressedData = [ NSMutableData dataWithLength :length+halfLength];
-    
-    
-    
     zStream. next_in = bytes;
-    
     zStream. avail_in = ( unsigned int )length;
-    
     zStream. avail_out = 0 ;
-    
-    
-    
     NSInteger bytesProcessedAlready = zStream. total_out ;
-    
     while (zStream. avail_in != 0 ) {
-        
-        
-        
         if (zStream. total_out - bytesProcessedAlready >= [uncompressedData length ]) {
-            
             [uncompressedData increaseLengthBy :halfLength];
-            
         }
-        
-        
-        
         zStream. next_out = ( Bytef *)[uncompressedData mutableBytes ] + zStream. total_out -bytesProcessedAlready;
-        
         zStream. avail_out = ( unsigned int )([uncompressedData length ] - (zStream. total_out -bytesProcessedAlready));
-        
-        
-        
         status = inflate (&zStream, Z_NO_FLUSH );
-        
-        
-        
         if (status == Z_STREAM_END ) {
-            
             break ;
-            
         } else if (status != Z_OK ) {
-            
             return nil ;
-            
         }
-        
     }
-    
-    
     
     status = inflateEnd (&zStream);
-    
     if (status != Z_OK ) {
-        
         return nil ;
-        
     }
-    
-    
-    
     [uncompressedData setLength : zStream. total_out -bytesProcessedAlready];  // Set real length
-    
-    
-    return uncompressedData;    
-    
-
+    return uncompressedData;
 }
 @end

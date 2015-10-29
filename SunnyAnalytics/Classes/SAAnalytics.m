@@ -36,22 +36,13 @@
 {
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstStart"]) {
-        
-        
-        
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
         [[NSUserDefaults standardUserDefaults]synchronize];
         NSString *firstDate = [self getCurrentDate];
         
         [[NSUserDefaults standardUserDefaults] setObject:firstDate forKey:@"firstDate"];
         [[NSUserDefaults standardUserDefaults]synchronize];
-        
     }
-    
-    
-    
-    
-    
     
     [self postDataThread];
     //performSelectorInBackground开多线程
@@ -119,10 +110,7 @@
 }
 
 -(void)postDataThread{
-    
-    
     NSData *viewInfoArray = [SAFileManeger readFile:VIEWINFO_PATH];  //页面访问信息
-    
 //    NSString *eventResponse;
 //    NSString *viewResponse;
 //    NSString *errorResponse;
@@ -138,11 +126,9 @@
 {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     
-    
     if (operateType) {
         [dic setObject:operateType forKey:@"operateType"];
     }
-    
     if (objId) {
         [dic setObject:objId forKey:@"objId"];
     }
@@ -165,14 +151,10 @@
     }
 
 }
-+(void)endPage:(NSString*)page
-{
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"startFailed"])
-    {
++(void)endPage:(NSString*)page{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"startFailed"]){
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
-        
         NSString *stayTimeinteval;
-        
         NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@startDate",page]];
         NSInteger intimer = [[SAAnalytics shareInstance] caculateTimesBetween:date withDate:[NSDate date]];
         stayTimeinteval = [NSString stringWithFormat:@"%ld",(long)intimer];
@@ -186,18 +168,14 @@
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:[NSString stringWithFormat:@"%@startDate",page]];
             [[SAAnalytics shareInstance] performSelectorInBackground:@selector(archiveEvent:) withObject:params];
         }
-        
-        
     }
 }
 
 
--(void)archiveEvent:(NSDictionary*)postDic
-{
-    
+-(void)archiveEvent:(NSDictionary*)postDic{
     @synchronized(self)
     {
-            if ([[NSUserDefaults standardUserDefaults] objectForKey:@"fromPage"]&&![[NSUserDefaults standardUserDefaults] boolForKey:@"FIRST_START"]) {
+            if (![[NSUserDefaults standardUserDefaults] boolForKey:@"FIRST_START"]) {
             SAEventInfo *userViewInfo = [[SAEventInfo alloc]init];
             
             userViewInfo.userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
@@ -219,22 +197,17 @@
             }
             else
                 userViewInfo.objId = @"";
-            
+                
             userViewInfo.operateDate = [self getCurrentDate];
-                userViewInfo.productLine = [NSString stringWithFormat:@"%d",(int)[[NSUserDefaults standardUserDefaults] integerForKey:SAProductLine]];
+            userViewInfo.productLine = [NSString stringWithFormat:@"%d",(int)[[NSUserDefaults standardUserDefaults] integerForKey:SAProductLine]];
             
             NSDictionary *dic = [[NSBundle mainBundle] infoDictionary];
-//            userViewInfo.deviceID = [SAUDIDUtil UDID];
             userViewInfo.appVersion = [NSString stringWithFormat:@"V%@",[dic objectForKey:@"CFBundleVersion"]];
-//            userViewInfo.deviceBrand = [UIDevice currentDevice].model;
             userViewInfo.deviceModel = [self deviceString];
-//            userViewInfo.deviceOSVersion = [UIDevice currentDevice].systemVersion;
             NSData *data = [SAFileManeger readFile:VIEWINFO_PATH];
-                data = [SAGzipUtility decompressData:data];
+            data = [SAGzipUtility decompressData:data];
                 
-                NSMutableArray* arr = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-
-//            NSMutableArray *arr = [NSMutableArray arrayWithArray:[data objectFromJSONData]];
+            NSMutableArray* arr = [NSKeyedUnarchiver unarchiveObjectWithData:data];
             if (!arr) {
                 arr = [[NSMutableArray alloc] init];
             }
@@ -242,32 +215,20 @@
             viewData = [userViewInfo entityToDictionary:userViewInfo];
             
             [arr addObject:viewData];
-                if ([SAFileManeger writeToFile:arr toPath:VIEWINFO_PATH]) {
-                    NSLog(@"写入成功");
-                }
-                else
-                {
-                    NSLog(@"写入失败");
-                }
-                
-//            if (isDebugEnabled) {
-//                [self postDataToServer];
-//            }
+            if ([SAFileManeger writeToFile:arr toPath:VIEWINFO_PATH]) {
+                NSLog(@"写入成功");
+            }else{
+                NSLog(@"写入失败");
+            }
         }
-        
     }
 }
 -(NSString*)getCurrentDate
 {
     NSDate *  senddate=[NSDate date];
-    
     NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
-    
     [dateformatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
-    
     NSString *locationString=[dateformatter stringFromDate:senddate];
-    
-    
     return locationString;
 }
 //根据获取到的modalArray数组中的内容，对应的找到modelNameArray数组中的名称（即实际中使用的名字）
@@ -276,7 +237,6 @@
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-    
     //    modalArray和modalNameArray中的内容是一一对应的
     //    modalArray中的内容是根据系统信息得到的，modalNameArray中的内容是实际中使用的名字
     NSArray *modelArray = @[
@@ -381,20 +341,13 @@
     if (modelIndex >= 0 && modelIndex < [modelNameArray count]) {
         modelNameString = [modelNameArray objectAtIndex:modelIndex];
     }
-    
-    
-    
-    
     return modelNameString;
 }
 -(NSInteger)caculateTimesBetween:(NSDate*)date1 withDate:(NSDate*)date2
 {
     NSCalendar *cal = [NSCalendar currentCalendar];
-    
     unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
-    
     NSDateComponents *d = [cal components:unitFlags fromDate:date1 toDate:date2 options:0];
-    
     NSInteger sec = [d hour]*3600+[d minute]*60+[d second];
     return sec;
 }
