@@ -16,6 +16,7 @@
 @property(nonatomic,strong)NSString *userName;
 @property(nonatomic,strong)NSString *operateDate;
 @property(nonatomic,strong)NSString *appVersion;
+@property(nonatomic,strong)NSString *appChannelId;
 @property(nonatomic,strong)NSString *productLine;
 @property(nonatomic,strong)NSString *deviceID;
 @property(nonatomic,strong)NSString *deviceModel;

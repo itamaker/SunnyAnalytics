@@ -7,19 +7,15 @@
 //
 #import "SAAnalytics.h"
 #import "SAEventInfo.h"
-#import <net/if.h>
-#import <ifaddrs.h>
-#import <arpa/inet.h>
-#import <sys/utsname.h>
 #import "SAFileManeger.h"
 #import "SAGzipUtility.h"
-#import "SAHeader.h"
-//#import "JSONKit.h"
+#import "SACommon.h"
 
 #define BEHAVIOR_PATH @"behaviorInfo.txt"
 #define VIEWINFO_PATH @"eventInfo.gz"
 #define ERROR_PATH @"errorInfo.txt"
 @implementation SAAnalytics
+
 +(SAAnalytics*)shareInstance
 {
     static SAAnalytics *instance = nil;
@@ -28,17 +24,19 @@
     }
     return instance;
 }
-+(void)startWthReportPolicy:(SAReportPolicy)reportPolicy
-{
+
++(void)initSAAnalytics:(NSString *)baseUrl  reportPolicy:(SAReportPolicy)reportPolicy channelId:(NSString *)channelId{
+    
+    [[SACommon shareInstance] setBaseUrl:baseUrl];
+    [[SACommon shareInstance] setChannelId:channelId];
     [[SAAnalytics shareInstance] initWithReportPolicy:reportPolicy];
 }
--(void)initWithReportPolicy:(SAReportPolicy)postPolicy
-{
-    
+
+-(void)initWithReportPolicy:(SAReportPolicy)postPolicy{
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstStart"]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
         [[NSUserDefaults standardUserDefaults]synchronize];
-        NSString *firstDate = [self getCurrentDate];
+        NSString *firstDate = [[SACommon  shareInstance ]getCurrentDate];
         
         [[NSUserDefaults standardUserDefaults] setObject:firstDate forKey:@"firstDate"];
         [[NSUserDefaults standardUserDefaults]synchronize];
@@ -67,7 +65,7 @@
     //  确定需要上传的文件(假设选择本地的文件)
     NSURL*theurl=[NSURL fileURLWithPath:path];
     NSData *data = [NSData dataWithContentsOfURL:theurl];
-    NSURL *url = [NSURL URLWithString:SAUPLOADLOG_URL];
+    NSURL *url = [NSURL URLWithString:[SACommon shareInstance].baseUrl ];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setTimeoutInterval:5.0];
     [request setHTTPMethod:@"POST"];
@@ -198,12 +196,13 @@
             else
                 userViewInfo.objId = @"";
                 
-            userViewInfo.operateDate = [self getCurrentDate];
-            userViewInfo.productLine = [NSString stringWithFormat:@"%d",(int)[[NSUserDefaults standardUserDefaults] integerForKey:SAProductLine]];
+            userViewInfo.operateDate = [[SACommon shareInstance] getCurrentDate];
+            userViewInfo.productLine = [NSString stringWithFormat:@"%d",(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"productLine"]];
             
             NSDictionary *dic = [[NSBundle mainBundle] infoDictionary];
             userViewInfo.appVersion = [NSString stringWithFormat:@"V%@",[dic objectForKey:@"CFBundleVersion"]];
-            userViewInfo.deviceModel = [self deviceString];
+            userViewInfo.deviceModel = [[SACommon shareInstance] deviceString];
+            userViewInfo.appChannelId = [SACommon shareInstance].channelId;
             NSData *data = [SAFileManeger readFile:VIEWINFO_PATH];
             data = [SAGzipUtility decompressData:data];
                 
@@ -223,126 +222,9 @@
         }
     }
 }
--(NSString*)getCurrentDate
-{
-    NSDate *  senddate=[NSDate date];
-    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
-    [dateformatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
-    NSString *locationString=[dateformatter stringFromDate:senddate];
-    return locationString;
-}
-//根据获取到的modalArray数组中的内容，对应的找到modelNameArray数组中的名称（即实际中使用的名字）
--(NSString*)deviceString
-{
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-    //    modalArray和modalNameArray中的内容是一一对应的
-    //    modalArray中的内容是根据系统信息得到的，modalNameArray中的内容是实际中使用的名字
-    NSArray *modelArray = @[
-                            
-                            @"i386", @"x86_64",
-                            
-                            @"iPhone1,1",
-                            @"iPhone1,2",
-                            @"iPhone2,1",
-                            @"iPhone3,1",
-                            @"iPhone3,2",
-                            @"iPhone3,3",
-                            @"iPhone4,1",
-                            @"iPhone5,1",
-                            @"iPhone5,2",
-                            @"iPhone5,3",
-                            @"iPhone5,4",
-                            @"iPhone6,1",
-                            @"iPhone6,2",
-                            @"iPhone7,1",
-                            @"iPhone7,2",
-                            
-                            @"iPod1,1",
-                            @"iPod2,1",
-                            @"iPod3,1",
-                            @"iPod4,1",
-                            @"iPod5,1",
-                            
-                            @"iPad1,1",
-                            @"iPad2,1",
-                            @"iPad2,2",
-                            @"iPad2,3",
-                            @"iPad2,4",
-                            @"iPad3,1",
-                            @"iPad3,2",
-                            @"iPad3,3",
-                            @"iPad3,4",
-                            @"iPad3,5",
-                            @"iPad3,6",
-                            @"iPad4,1",
-                            @"iPad4,2",
-                            @"iPad4,3",
-                            @"iPad4,4",
-                            @"iPad4,5",
-                            @"iPad4,6",
-                            
-                            @"iPad2,5",
-                            @"iPad2,6",
-                            @"iPad2,7",
-                            ];
-    NSArray *modelNameArray = @[
-                                
-                                @"iPhone Simulator", @"iPhone Simulator",
-                                
-                                @"iPhone 2G",
-                                @"iPhone 3G",
-                                @"iPhone 3GS",
-                                @"iPhone 4(GSM)",
-                                @"iPhone 4(GSM Rev A)",
-                                @"iPhone 4(CDMA)",
-                                @"iPhone 4S",
-                                @"iPhone 5(GSM)",
-                                @"iPhone 5(GSM+CDMA)",
-                                @"iPhone 5c(GSM)",
-                                @"iPhone 5c(Global)",
-                                @"iPhone 5s(GSM)",
-                                @"iPhone 5s(Global)",
-                                @"iPhone 6 Plus",
-                                @"iPhone 6",
-                                
-                                @"iPod Touch 1G",
-                                @"iPod Touch 2G",
-                                @"iPod Touch 3G",
-                                @"iPod Touch 4G",
-                                @"iPod Touch 5G",
-                                
-                                @"iPad",
-                                @"iPad 2(WiFi)",
-                                @"iPad 2(GSM)",
-                                @"iPad 2(CDMA)",
-                                @"iPad 2(WiFi + New Chip)",
-                                @"iPad 3(WiFi)",
-                                @"iPad 3(GSM+CDMA)",
-                                @"iPad 3(GSM)",
-                                @"iPad 4(WiFi)",
-                                @"iPad 4(GSM)",
-                                @"iPad 4(GSM+CDMA)",
-                                @"iPad Air(WiFi)",
-                                @"iPad Air(GSM)",
-                                @"iPad Air(GSM+CDMA)",
-                                @"iPad Mini 2G(WiFi)",
-                                @"iPad Mini 2G(GSM)",
-                                @"iPad Mini 2G(GSM+CDMA)",
-                                
-                                @"iPad mini (WiFi)",
-                                @"iPad mini (GSM)",
-                                @"ipad mini (GSM+CDMA)"
-                                ];
-    NSInteger modelIndex = - 1;
-    NSString *modelNameString = nil;
-    modelIndex = [modelArray indexOfObject:deviceString];
-    if (modelIndex >= 0 && modelIndex < [modelNameArray count]) {
-        modelNameString = [modelNameArray objectAtIndex:modelIndex];
-    }
-    return modelNameString;
-}
+
+
+
 -(NSInteger)caculateTimesBetween:(NSDate*)date1 withDate:(NSDate*)date2
 {
     NSCalendar *cal = [NSCalendar currentCalendar];

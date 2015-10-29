@@ -16,7 +16,8 @@ typedef enum {          //发送策略
 
 @interface SAAnalytics : NSObject
 
-+(void)startWthReportPolicy:(SAReportPolicy)reportPolicy;
++(void)initSAAnalytics:(NSString *)baseUrl  reportPolicy:(SAReportPolicy)reportPolicy channelId:(NSString *) channelId;
+
 +(void)doEvent:(NSString*)operateType objectId:(NSString*)objId params:(NSString*)optParams;
 +(void)beginPage:(NSString*)page;
 +(void)endPage:(NSString*)page;

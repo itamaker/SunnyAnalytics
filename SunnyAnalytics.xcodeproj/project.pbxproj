@@ -20,6 +20,7 @@
 		0E3AB60F1BDF6D1500B751A0 /* SAEventInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6021BDF6D1500B751A0 /* SAEventInfo.m */; };
 		0E3AB6101BDF6D1500B751A0 /* SAFileManeger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6041BDF6D1500B751A0 /* SAFileManeger.m */; };
 		0E3AB6111BDF6D1500B751A0 /* SAGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AB6061BDF6D1500B751A0 /* SAGzipUtility.m */; };
+		0EE4170D1BE20A60001069F4 /* SACommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE4170C1BE20A60001069F4 /* SACommon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +66,8 @@
 		0E3AB6041BDF6D1500B751A0 /* SAFileManeger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAFileManeger.m; sourceTree = "<group>"; };
 		0E3AB6051BDF6D1500B751A0 /* SAGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAGzipUtility.h; sourceTree = "<group>"; };
 		0E3AB6061BDF6D1500B751A0 /* SAGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAGzipUtility.m; sourceTree = "<group>"; };
-		0E3AB6071BDF6D1500B751A0 /* SAHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAHeader.h; sourceTree = "<group>"; };
+		0EE4170B1BE20A60001069F4 /* SACommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACommon.h; sourceTree = "<group>"; };
+		0EE4170C1BE20A60001069F4 /* SACommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SACommon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +171,8 @@
 				0E3AB6041BDF6D1500B751A0 /* SAFileManeger.m */,
 				0E3AB6051BDF6D1500B751A0 /* SAGzipUtility.h */,
 				0E3AB6061BDF6D1500B751A0 /* SAGzipUtility.m */,
-				0E3AB6071BDF6D1500B751A0 /* SAHeader.h */,
+				0EE4170B1BE20A60001069F4 /* SACommon.h */,
+				0EE4170C1BE20A60001069F4 /* SACommon.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			files = (
 				0E2C40431B625FB800384359 /* ViewController.m in Sources */,
 				0E2C40401B625FB800384359 /* AppDelegate.m in Sources */,
+				0EE4170D1BE20A60001069F4 /* SACommon.m in Sources */,
 				0E3AB60E1BDF6D1500B751A0 /* SAAnalytics.m in Sources */,
 				0E3AB6101BDF6D1500B751A0 /* SAFileManeger.m in Sources */,
 				0E2C403D1B625FB800384359 /* main.m in Sources */,

@@ -9,6 +9,7 @@
 #import "SAFileManeger.h"
 #import "SAGzipUtility.h"
 @implementation SAFileManeger
+
 //读取toPath路径下的NSArray类型的内容
 + (NSData*)readFile:(NSString *)toPath {
     NSFileManager *fileManager = [NSFileManager defaultManager];
