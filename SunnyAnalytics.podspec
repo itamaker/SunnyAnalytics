@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "SunnyAnalytics"
   s.version      = "0.0.1"
-  s.summary      = "A short description of SunnyAnalytics."
+  s.summary      = "SunnyAnalytics."
 
   s.description  = <<-DESC
                    A longer description of SunnyAnalytics in Markdown format.
