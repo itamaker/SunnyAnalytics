@@ -10,7 +10,6 @@
 #import "SAGzipUtility.h"
 @implementation SAFileManeger
 
-//读取toPath路径下的NSArray类型的内容
 + (NSData*)readFile:(NSString *)toPath {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     //获取真机下的路径
@@ -26,7 +25,6 @@
     return nil;
 }
 
-//是否把arr写到toPath路径下
 + (BOOL)writeToFile:(NSArray*)arr toPath:(NSString*)toPath
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -37,7 +35,6 @@
     return [data writeToFile:path atomically:NO];
 }
 
-//是否删除path内容
 + (BOOL)deleteFile:(NSString*)path
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
