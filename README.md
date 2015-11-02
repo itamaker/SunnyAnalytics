@@ -32,7 +32,7 @@
 
 #### [2] 页面停留时长
 
-#pragma mark - 在UIViewController---viewWillAppear----方法中加入如下方法
+	#pragma mark - 在UIViewController---viewWillAppear----方法中加入如下方法
 
 	/**
  	*  UIViewController 创建时调用
@@ -42,7 +42,7 @@
 	+(void)beginPage:(NSString*)page;
 
 
-#pragma mark - 在UIViewController---viewWillDisappear----方法中加入如下方法
+	#pragma mark - 在UIViewController---viewWillDisappear----方法中加入如下方法
 
 	/**
  	*  UIViewController 销毁时调用
