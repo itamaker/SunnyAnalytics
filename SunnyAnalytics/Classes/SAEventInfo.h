@@ -13,47 +13,47 @@
 /**
  * 事件名称
  */
-@property(nonatomic,strong)NSString *operateType;
+@property(nonatomic,copy)NSString *operateType;
 /**
  *  ID
  */
-@property(nonatomic,strong)NSString *objId;
+@property(nonatomic,copy)NSString *objId;
 /**
  *  UIViewController停留的时间
  */
-@property(nonatomic,strong)NSString *stayTime;
+@property(nonatomic,copy)NSString *stayTime;
 /**
  *  用户
  */
-@property(nonatomic,strong)NSString *userName;
+@property(nonatomic,copy)NSString *userName;
 /**
  *  时间
  */
-@property(nonatomic,strong)NSString *operateDate;
+@property(nonatomic,copy)NSString *operateDate;
 /**
  *  App版本
  */
-@property(nonatomic,strong)NSString *appVersion;
+@property(nonatomic,copy)NSString *appVersion;
 /**
  *  渠道ID
  */
-@property(nonatomic,strong)NSString *appChannelId;
+@property(nonatomic,copy)NSString *appChannelId;
 /**
  *  工程线
  */
-@property(nonatomic,strong)NSString *productLine;
+@property(nonatomic,copy)NSString *productLine;
 /**
  *  UDID
  */
-@property(nonatomic,strong)NSString *deviceID;
+@property(nonatomic,copy)NSString *deviceID;
 /**
  *  设备制式
  */
-@property(nonatomic,strong)NSString *deviceModel;
+@property(nonatomic,copy)NSString *deviceModel;
 /**
  *  设备OS版本
  */
-@property(nonatomic,strong)NSString *deviceOSVersion;
+@property(nonatomic,copy)NSString *deviceOSVersion;
 
 /**
  *  系统转NSDictionary
