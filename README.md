@@ -2,6 +2,13 @@
 
 ###本工程用于APP用户行为埋点
 
+####Installation with CocoaPods
+
+####Podfile
+
+	pod "SunnyAnalytics"
+
+
 ####1.初始化统计模块：
 
 通过`SAAnalytics`

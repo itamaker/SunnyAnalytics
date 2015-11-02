@@ -23,14 +23,15 @@
     return instance;
 }
 
-//根据获取到的modalArray数组中的内容，对应的找到modelNameArray数组中的名称（即实际中使用的名字）
 -(NSString*)deviceString
 {
     struct utsname systemInfo;
     uname(&systemInfo);
     NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-    //    modalArray和modalNameArray中的内容是一一对应的
-    //    modalArray中的内容是根据系统信息得到的，modalNameArray中的内容是实际中使用的名字
+    /**
+     *  modalArray和modalNameArray中的内容是一一对应的
+     *  modalArray中的内容是根据系统信息得到的，modalNameArray中的内容是实际中使用的名字
+     */
     NSArray *modelArray = @[
                             
                             @"i386", @"x86_64",

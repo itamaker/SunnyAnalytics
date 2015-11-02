@@ -10,19 +10,58 @@
 
 @interface SAEventInfo : NSObject
 
-@property(nonatomic,strong)NSString *operateType;
-@property(nonatomic,strong)NSString *objId;
-@property(nonatomic,strong)NSString *stayTime;
-@property(nonatomic,strong)NSString *userName;
-@property(nonatomic,strong)NSString *operateDate;
-@property(nonatomic,strong)NSString *appVersion;
-@property(nonatomic,strong)NSString *appChannelId;
-@property(nonatomic,strong)NSString *productLine;
-@property(nonatomic,strong)NSString *deviceID;
-@property(nonatomic,strong)NSString *deviceModel;
-@property(nonatomic,strong)NSString *deviceBrand;
-@property(nonatomic,strong)NSString *deviceOSVersion;
+/**
+ * 事件名称
+ */
+@property(nonatomic,copy)NSString *operateType;
+/**
+ *  ID
+ */
+@property(nonatomic,copy)NSString *objId;
+/**
+ *  UIViewController停留的时间
+ */
+@property(nonatomic,copy)NSString *stayTime;
+/**
+ *  用户
+ */
+@property(nonatomic,copy)NSString *userName;
+/**
+ *  时间
+ */
+@property(nonatomic,copy)NSString *operateDate;
+/**
+ *  App版本
+ */
+@property(nonatomic,copy)NSString *appVersion;
+/**
+ *  渠道ID
+ */
+@property(nonatomic,copy)NSString *appChannelId;
+/**
+ *  工程线
+ */
+@property(nonatomic,copy)NSString *productLine;
+/**
+ *  UDID
+ */
+@property(nonatomic,copy)NSString *deviceID;
+/**
+ *  设备制式
+ */
+@property(nonatomic,copy)NSString *deviceModel;
+/**
+ *  设备OS版本
+ */
+@property(nonatomic,copy)NSString *deviceOSVersion;
 
+/**
+ *  系统转NSDictionary
+ *
+ *  @param entity 需要转换的entity
+ *
+ *  @return 转换后的NSDictionary
+ */
 - (NSDictionary *) entityToDictionary:(id)entity;
 
 @end
