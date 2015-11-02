@@ -14,11 +14,13 @@
  *  @param reportPolicy 发送策略
  *  @param channelId    渠道ID
  */
+
 +(void)initSAAnalytics:(NSString *)baseUrl  reportPolicy:(SAReportPolicy)reportPolicy channelId:(NSString *) channelId;
 
 
 ####2.事件监听方法
 #####［1］按钮点按事件
+
 /**
  *  按钮事件统计
  *
@@ -26,25 +28,31 @@
  *  @param objId       ID
  *  @param optParams   参数
  */
+
 +(void)doEvent:(NSString*)operateType objectId:(NSString*)objId params:(NSString*)optParams;
 
 
 #### [2] 页面停留时长
+
  #pragma mark - 在UIViewController---viewWillAppear----方法中加入如下方法
+
 /**
  *  UIViewController 创建时调用
  *
  *  @param page UIViewController名称
  */
+
 +(void)beginPage:(NSString*)page;
 
 
  #pragma mark - 在UIViewController---viewWillDisappear----方法中加入如下方法
+
 /**
  *  UIViewController 销毁时调用
  *
  *  @param page UIViewController名称
  */
+ 
 +(void)endPage:(NSString*)page;
 
 
