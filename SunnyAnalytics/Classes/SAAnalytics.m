@@ -43,7 +43,7 @@
     }
     
     [self postDataThread];
-    //performSelectorInBackground开多线程
+    //performSelectorInBackground
 //    [self performSelectorInBackground:@selector(combinData) withObject:nil];
 }
 -(void)postData
@@ -89,6 +89,7 @@
     [request  setHTTPBody:body];
     //    [request addValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
     [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response,NSData *data,NSError *error){
         
         NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
