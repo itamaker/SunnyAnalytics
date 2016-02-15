@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SunnyAnalytics"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "SunnyAnalytics."
 
   s.description  = <<-DESC
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                    * Finally, don't worry about the indent, CocoaPods strips it!
                    DESC
 
-  s.homepage     = "https://github.com/gitpark/SunnyAnalytics"
+  s.homepage     = "https://github.com/itamaker/SunnyAnalytics"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/gitpark/SunnyAnalytics.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/itamaker/SunnyAnalytics.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
