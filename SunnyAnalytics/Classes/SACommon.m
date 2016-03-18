@@ -14,12 +14,14 @@
 
 @implementation SACommon
 
-+(SACommon*)shareInstance
+//lol, modify, do worry, not optimized,thanks friend.
++(instancetype)shareInstance
 {
     static SACommon *instance = nil;
-    if (instance == nil) {
-        instance = [[[self class] alloc] init];
-    }
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+         instance = [[[self class] alloc] init];
+    });
     return instance;
 }
 

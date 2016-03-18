@@ -16,12 +16,14 @@
 #define ERROR_PATH @"errorInfo.txt"
 @implementation SAAnalytics
 
-+(SAAnalytics*)shareInstance
+//lol, modify, do worry, not optimized,thanks friend.
++(instancetype)shareInstance
 {
     static SAAnalytics *instance = nil;
-    if (instance == nil) {
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
         instance = [[[self class] alloc] init];
-    }
+    });
     return instance;
 }
 
@@ -43,9 +45,9 @@
     }
     
     [self postDataThread];
-    //performSelectorInBackground
-//    [self performSelectorInBackground:@selector(combinData) withObject:nil];
 }
+
+//请不要关心下面的注释，因为这个项目还不完善.
 -(void)postData
 {
 //    NSString *fileName = @"hmt";
