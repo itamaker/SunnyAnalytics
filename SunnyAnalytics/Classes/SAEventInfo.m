@@ -29,6 +29,7 @@
         {
             value = [self getObjectInternal:value];
         }
+        free(props);
         [dic setObject:value forKey:propName];
     }
     return dic;
