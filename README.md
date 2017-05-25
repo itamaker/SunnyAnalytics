@@ -1,4 +1,4 @@
-# SunnyAnalytics-alpha beta v0.0.1
+# SunnyAnalytics-alpha beta v0.0.6
 
 ###本工程用于APP用户行为埋点
 
